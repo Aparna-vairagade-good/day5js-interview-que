@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  p{
+      font-size: 20px;
+      font-weight: bold;
+  }
+  pre{
+      font-size: 17px;
+      color: indigo;
+      font-weight: bold;
+      
+  }
+  div{
+      border: 2px solid red;
+      margin: 2px;
+      border-radius: 8px;
+  }
+</style>
+<body>
+  <div> <p> 1. What is hoisting?</p>
+    <p> JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes 
+     to the top of their scope, prior to execution of the code. Hoisting is not a term normatively defined in the ECMAScript specification.
+     Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration.</p>
+ </div>
+
+   <div><p> 2. What is a Temporal Dead Zone?</p>
+    <p> Temporal Dead Zone is the period of time during which the let and const declarations cannot be accessed. 
+     Temporal Dead Zone starts when the code execution enters the block which contains the let or const 
+     declaration and continues until the declaration has executed.</p>
+ </div>
+ <div> <p>  3.What is the DOM?</p>
+  <p>  The Document Object Model (DOM) is the data representation of the objects that comprise the structure 
+    and content of a document on the web.</p>
+<pre>const paragraphs = document.querySelectorAll("p");
+    alert(paragraphs[0].nodeName);
+</pre>
+</div>
+    
+<div><p>4.Explain passed by value and passed by reference</p>
+  <p>In pass-by value in JavaScript, a copy of the original variable is created, so any changes made to the copied 
+    variable do not affect the original variable. In pass-by reference in JavaScript, we pass the reference of the 
+    actual parameter. No copy is created in the memory.</p>
+  <pre>let a=5
+      let b=a;
+      console.log(a)
+      console.log(b)
+      b=6
+      console.log(a)
+      console.log(b)
+  
+      output:5
+             5
+             5
+             6
+  </pre>
+  <pre>let obj2=obj
+      console.log(obj)
+      console.log(obj2)
+      obj2.name="ashwini"
+      console.log(obj)
+      console.log(obj2)
+  
+      output:
+      name:shivani
+      name:shivani 
+      name:ashwini 
+      name:ashwini
+  </pre>
+</div>
+
+<div><p>5. Write code to explain map and filter in arrays</p>
+  <pre>const numbers = [65, 44, 12, 4];
+      const newArr = numbers.map(myFunction);
+      
+      console.log(newArr)
+      
+      function myFunction(num) {
+        return num * 10;
+      }
+      output:[650,440,120,40]
+  </pre>
+  <pre>const ages = [32, 33, 16, 40];
+      console.log(ages.filter(checkAdult))
+      
+      function checkAdult(age) {
+        return age >= 18;
+      }
+  
+      output:[32,33,40]
+  </pre>
+  </div>
+<div><p>6. What is the purpose of async/await keywords?</p>
+  <p>The async keyword turns a method into an async method, which allows you to use the await keyword in its body. 
+    When the await keyword is applied, it suspends the calling method and yields control back to its caller until 
+    the awaited task is complete. await can only be used inside an async method.</p>
+  </div>
+<div><p>7. Give an example of async/await</p>
+  <pre>async function f() {
+  
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done!"), 1000)
+      });
+      let result = await promise; // wait until the promise resolves (*)
+      alert(result); // "done!"
+    }
+    f();
+  
+    output:giving alert massage "done!"
+  </pre>
+</div>
+
+
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
